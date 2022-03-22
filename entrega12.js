@@ -18,5 +18,5 @@ new Persona ("Maynard").dirNom();
 function ciudad(nombre, poblacion, gentilicio){
     this.nombre = nombre;
     this.poblacio = poblacion;
-    this.gentilicio = gentilico;
+    this.gentilicio = gentilicio;
 }
