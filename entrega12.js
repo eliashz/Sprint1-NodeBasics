@@ -1,4 +1,4 @@
-//Nivell 1 Exercici 1
+//Nivell 1 Exercici 1 
 const primerArrow = () => "Elías" + "Huerta";
 console.log(primerArrow());
 //Nivel 2 Exercici 1

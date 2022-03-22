@@ -1,5 +1,5 @@
 let exercici1 = [];
-//Nivell 1
+//Nivell 1 Excercici 1
 function nombre (nom){
         console.log(nom);
 }
@@ -11,9 +11,9 @@ let mensaje = `Hola, ${nom} ${apellido}.`;
 console.log(mensaje); 
 //Nivell 2 Exercici 2
 function valor (){
-    return `Bienvenido a la IT Academy, ${nom}`;
+    return "lunes"
 }
-console.log(valor());
+console.log(`Bienvenido a la IT Academy, hoy es ${valor()}.`);
 //Nivell 3 Exercici 1
 function contar(){
     for (let k=0; k<=9; k++){
@@ -21,8 +21,11 @@ function contar(){
     }  
 }
 for (let k=0; k<=9; k++){
-    exercici1.push(contar());
+    exercici1[k]=contar;
 }
+console.log(exercici1);
+
+
 //Nivell 3 Exercici 2
 let nom32 = "Max Dembo";
-let anonima = (function () { console.log(nom32); }());
+let anonima = (function (nomn) { console.log(nom32); }());
