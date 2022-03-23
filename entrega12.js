@@ -15,13 +15,13 @@ class Persona {
 }
 new Persona ("Maynard").dirNom();
 //Nivell 3 Exercici 1 -- FALTA
-let Ciudad = function (nombre, poblacion, gentilicio){
-    this.nombre = nombre;
-    this.poblacio = poblacion;
-    this.gentilicio = gentilicio;
+function Fruta (){
+    this.frutaNombre = "frutaNombre";
 }
-class Barrio extends Ciudad {
-    super(nombre, poblacion, gentilicio)
+Fruta.prototype.display=function(){ return "El nombre de la fruta es: "+this.frutaNombre}
+function Comida (nombreComida){
+    this.frutaNombre=nombreComida;
 }
-let ciudad = new Ciudad ("Barcelona","2m","barecelonés")
-console.log(ciudad);
+Comida.prototype=Object.create(Fruta.prototype);
+var comida = new Comida("Pera limonera");
+console.log(comida.display());
