@@ -15,8 +15,13 @@ class Persona {
 }
 new Persona ("Maynard").dirNom();
 //Nivell 3 Exercici 1 -- FALTA
-function ciudad(nombre, poblacion, gentilicio){
+let Ciudad = function (nombre, poblacion, gentilicio){
     this.nombre = nombre;
     this.poblacio = poblacion;
     this.gentilicio = gentilicio;
 }
+class Barrio extends Ciudad {
+    super(nombre, poblacion, gentilicio)
+}
+let ciudad = new Ciudad ("Barcelona","2m","barecelonés")
+console.log(ciudad);
