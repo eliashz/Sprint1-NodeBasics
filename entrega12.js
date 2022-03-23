@@ -14,7 +14,7 @@ class Persona {
     }
 }
 new Persona ("Maynard").dirNom();
-//Nivell 3 Exercici 1
+//Nivell 3 Exercici 1 -- FALTA
 function ciudad(nombre, poblacion, gentilicio){
     this.nombre = nombre;
     this.poblacio = poblacion;
