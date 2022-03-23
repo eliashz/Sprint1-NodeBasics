@@ -25,5 +25,7 @@ for (let i=0;i<=9;i++){
     funciones[i]();
 }
 //Nivell 3 Exercici 2
-let nom32 = "Max Dembo";
-let anonima = (function (nomn) { console.log(nom32); }());
+let anonima = function (nombre32) {
+    console.log("Hola, "+nombre32);
+};
+anonima("Max");
