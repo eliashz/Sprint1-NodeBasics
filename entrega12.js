@@ -1,6 +1,7 @@
 //Nivell 1 Exercici 1 
-const primerArrow = () => "Elías" + "Huerta";
-console.log(primerArrow());
+(() => {
+    console.log('Elías'+'Huerta');
+  })();
 //Nivel 2 Exercici 1
 const segundoArrow = parametro => ({valor: parametro});
 console.log(segundoArrow(10));

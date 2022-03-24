@@ -46,7 +46,6 @@ let employees = [{
     id: 3,
     name: 'Jeff Bezos'
 }];
- 
 let salaries = [{
     id: 1,
     salary: 4000
@@ -69,3 +68,12 @@ promesa21.then (res => {
     })
 });
 let getEmployee = () => {promesa21};
+/* Nivell 2 - Exercici 2
+Crea una altra arrow function getSalary() similar a l'anterior que rebi
+com a paràmetre un objecte employee i retorni el seu salari.*/
+let employee = employees[1];
+let getSalary = (employee) => {
+    let obj = salaries.find(data => data.id === employee.id);
+    console.log("El salario es de "+obj.salary);
+}
+getSalary(employee)
