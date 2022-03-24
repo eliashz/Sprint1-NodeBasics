@@ -14,7 +14,7 @@ promesa.then(
     function(value) {console.log("Bien (N1E1)")},
     function(error) {console.log("Error (N1E1)")}
 ); 
-/* Nivell 1 - Exercici 2
+/* Nivell 1 - Exercici 2 - MAL
 Crea una arrow function que rebi un paràmetre i una funció callback 
 i li passi a la funció un missatge o un altre (que s'imprimirà per consola) 
 en funció del paràmetre rebut. */
@@ -76,4 +76,4 @@ let getSalary = (employee) => {
     let obj = salaries.find(data => data.id === employee.id);
     console.log("El salario es de "+obj.salary);
 }
-getSalary(employee)
+getSalary(employee); 
