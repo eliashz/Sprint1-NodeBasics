@@ -36,7 +36,6 @@ arrowFuncion(parametro, ()=>{});
 /* Nivell 2 - Exercici 1
 Donats els objectes employees i salaries, crea una arrow function getEmployee() 
 que retorni una Promise efectuant la cerca en l'objecte pel seu id. */
-let promesa21 = new Promise ( )
 let employees = [{
     id: 1,
     name: 'Linux Torvalds'
@@ -58,4 +57,15 @@ let salaries = [{
     id: 3,
     salary: 2000
 }];
+let promesa21 = new Promise (function(resolve, reject){
+    resolve();
+});
+promesa21.then (res => {
+    employees.forEach(object => {
+        console.log("ID de Employees: "+object.id);
+    })
+    salaries.forEach(object => {
+        console.log("ID de Salaries: "+object.id);
+    })
+});
 let getEmployee = () => {promesa21};
