@@ -24,4 +24,4 @@ function Comida (nombreComida){
 }
 Comida.prototype=Object.create(Fruta.prototype);
 var comida = new Comida("Pera limonera");
-console.log(comida.display());
+console.log(comida.display()); 
