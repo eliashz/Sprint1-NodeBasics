@@ -3,7 +3,7 @@ const primerArrow = () => "Elías" + "Huerta";
 console.log(primerArrow());
 //Nivel 2 Exercici 1
 const segundoArrow = parametro => ({valor: parametro});
-console.log((segundoArrow(10)));
+console.log(segundoArrow(10));
 //Nivell 2 Exercici 2
 class Persona {
     constructor (nom){
