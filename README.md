@@ -4,7 +4,7 @@ $node --version
 $ code . 
 $ node index.js
 
-GITHUB
+GITHUB https://www.freecodecamp.org/espanol/news/como-hacer-tu-primer-pull-request-en-github/
 git init -> una vez por repositorio
 git add index.js // git add . -> cambios
 git push 
