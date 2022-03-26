@@ -84,7 +84,8 @@ new Promise (function (resolve, reject) {
     resolve();
 })
 .then (function(value) {getEmployee()})
-.then (function(value) {getSalary(employee)});
+.then (function(value) {getSalary(employee)})
 /* Nivell 3 - Exercici 1
 Fixa un element catch a la invocació del nivell anterior que 
 capturi qualsevol error i el mostri per la consola. */
+.catch(function(error) {console.log("Error");});
