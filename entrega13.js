@@ -14,25 +14,25 @@ promesa.then(
     function(value) {console.log("Bien (N1E1)")},
     function(error) {console.log("Error (N1E1)")}
 ); 
-/* Nivell 1 - Exercici 2 - MAL
+/* Nivell 1 - Exercici 2
 Crea una arrow function que rebi un paràmetre i una funció callback 
 i li passi a la funció un missatge o un altre (que s'imprimirà per consola) 
 en funció del paràmetre rebut. */
-function funcionCallback (parametro){
-    let promesa = new Promise  (function(resolve, reject){
-        if (parametro==0){
-            resolve();
-        }else{    
-            reject();
-        }    
-    });
-    promesa
-        .then (res => {console.log("Hola (N1E2)")})
-        .catch (err => {console.log("Adeu (N1E2)")});
-}
 let parametro = Math.round(Math.random(0,2));
-let arrowFuncion = callback => funcionCallback(parametro);
-arrowFuncion(parametro, ()=>{});
+function funcionCallback (frase){
+    console.log(frase);
+}
+let funcionArrow = (parametro, funcionCallback) => {
+    let mensaje;
+    if (parametro==0){
+        mensaje = "Mensaje del Nivel 1, ejercicio 2 número 1";
+    }else{
+        mensaje = "Mensaje del Nivel 1, ejercicio 2 número 2";
+    }
+    funcionCallback(mensaje);
+};
+funcionArrow(parametro, funcionCallback);
+
 /* Nivell 2 - Exercici 1
 Donats els objectes employees i salaries, crea una arrow function getEmployee() 
 que retorni una Promise efectuant la cerca en l'objecte pel seu id. */
@@ -77,3 +77,5 @@ let getSalary = (employee) => {
     console.log("El salario es de "+obj.salary);
 }
 getSalary(employee); 
+/* Nivell 2 - Exercici 3
+Invoca la primera funció getEmployee() i després getSalary() niant l'execució de les dues promises. */
