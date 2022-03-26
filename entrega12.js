@@ -15,7 +15,7 @@ class Persona {
     }
 }
 new Persona ("Maynard").dirNom();
-//Nivell 3 Exercici 1
+//Nivell 3 Exercici 1 - FALTA!
 function Fruta (){
     this.frutaNombre = "frutaNombre";
 }
