@@ -2,7 +2,7 @@
 Crea una funció que retorni una Promise que invoqui la funció resolve() o reject() que rep. 
 Invoca-la passant-li les dues funcions de manera que imprimeixin un missatge diferent depenent 
 de si la Promise es resol o no. */
-let promesa = new Promise  (function(resolve, reject){
+let promesa = new Promise (function(resolve, reject){
     let x = Math.round(Math.random(0,2));
     if (x==0){
         resolve();
@@ -32,7 +32,6 @@ let funcionArrow = (parametro, funcionCallback) => {
     funcionCallback(mensaje);
 };
 funcionArrow(parametro, funcionCallback);
-
 /* Nivell 2 - Exercici 1
 Donats els objectes employees i salaries, crea una arrow function getEmployee() 
 que retorni una Promise efectuant la cerca en l'objecte pel seu id. */
@@ -56,18 +55,19 @@ let salaries = [{
     id: 3,
     salary: 2000
 }];
-let promesa21 = new Promise (function(resolve, reject){
+let getEmployee = () => {
+    let promesa21 = new Promise (function(resolve, reject){
     resolve();
-});
-promesa21.then (res => {
-    employees.forEach(object => {
-        console.log("ID de Employees: "+object.id);
-    })
-    salaries.forEach(object => {
-        console.log("ID de Salaries: "+object.id);
-    })
-});
-let getEmployee = () => {promesa21};
+    });
+    promesa21.then (res => {
+        employees.forEach(object => {
+            console.log("ID de Employees: "+object.id);
+        })
+        salaries.forEach(object => {
+            console.log("ID de Salaries: "+object.id);
+        })
+});};
+getEmployee();
 /* Nivell 2 - Exercici 2
 Crea una altra arrow function getSalary() similar a l'anterior que rebi
 com a paràmetre un objecte employee i retorni el seu salari.*/
@@ -78,4 +78,13 @@ let getSalary = (employee) => {
 }
 getSalary(employee); 
 /* Nivell 2 - Exercici 3
-Invoca la primera funció getEmployee() i després getSalary() niant l'execució de les dues promises. */
+Invoca la primera funció getEmployee() i després getSalary() niant 
+l'execució de les dues promises. */
+new Promise (function (resolve, reject) {
+    resolve();
+})
+.then (function(value) {getEmployee()})
+.then (function(value) {getSalary(employee)});
+/* Nivell 3 - Exercici 1
+Fixa un element catch a la invocació del nivell anterior que 
+capturi qualsevol error i el mostri per la consola. */
