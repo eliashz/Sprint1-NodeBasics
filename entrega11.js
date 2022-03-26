@@ -18,11 +18,13 @@ console.log(`Bienvenido a la IT Academy, hoy es ${valor()}.`);
 function contar(){
     for (let i=0;i<=9;i++){
         console.log(i);
-        funciones[i]();
     }
 }
 for (let i=0;i<=9;i++){
     funciones.push(contar);
+}
+for (let i=0;i<=9;i++){
+    funciones[i]();
 }
 //Nivell 3 Exercici 2
 let anonima = (function(nom32="Max"){
