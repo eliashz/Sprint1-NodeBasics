@@ -11,7 +11,11 @@ while (n<10000){
 Crea una funció que, en executar-la, escrigui una frase en un fitxer. */
 const fs = require('fs');
 const archivo = 'prueba.txt';
-const contenido = "Estoy escribiendo en un fichero."
+const contenido = "Escrigui una frase en un fitxer."
 fs.writeFileSync(archivo, contenido);
 /* Nivell 1 - Exercici 3
 Crea una altra funció que mostri per consola el contingut del fitxer de l'exercici anterior. */
+const texto = fs.readFileSync(archivo, {encoding:'utf8'});
+console.log(texto);
+/* Nivell 2 - Exercici 1
+Crea una funció que comprimeixi el fitxer del nivell 1. */
