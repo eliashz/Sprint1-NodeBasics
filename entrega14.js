@@ -87,4 +87,4 @@ async function fetchingN2E1 (){
 }
 fetchingN2E1();
 /* Nivell 3 - Exercici 1
-Captura tots els errors possibles dels nivells 1 i 2. */
+Captura tots els errors possibles dels nivells 1 i 2.*/
