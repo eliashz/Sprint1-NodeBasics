@@ -16,3 +16,6 @@ git remote add origin https... -> sale al crear el repositorio
 git clone https...
 cd [repositorio]
 git checkout -b [rama]
+
+Entrega 1.5
+https://www.youtube.com/watch?v=aA7h_M85rjA
