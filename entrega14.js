@@ -72,8 +72,7 @@ una Promise que efectuï la seva funció resolve() després de 2 segons
 de la seva invocació. */
 let funcionN2E1 = () => {
     return new Promise (function(resolve, reject){
-        setTimeout(() => {resolve()}, 2000);
-    })
+        setTimeout(() => {resolve()}, 2000);})
     .then(
         function(value) {console.log("Console.log del Nivel 2 Ejercicio 1")},
     ); 
