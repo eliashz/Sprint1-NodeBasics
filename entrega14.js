@@ -24,9 +24,8 @@ let salaries = [{
     id: 3,
     salary: 2000
 }];
-let idEmpleado = 3;
 let employee = employees[1];
-let getEmployee = () => {
+let getEmployee = (idEmpleado) => {
     return new Promise (function(resolve, reject){
         if (employees.findIndex(x => x.id === idEmpleado)!=-1){
             resolve();
@@ -43,7 +42,6 @@ let getEmployee = () => {
         function(error) {console.log("ID no encontrada.");}
     );
 }
-getEmployee();
 let getSalary = (employee) => {
     let sal = salaries.find(data => data.id === employee.id);
     console.log("El salario es de "+sal.salary);
@@ -53,8 +51,22 @@ getSalary(employee);
 Crea una funció asíncrona que rebi un id d'empleat i imprimeixi
 per pantalla el nom de l'empleat i el seu salari, usant les 
 funcions que has definit a l'exercici anterior. */
-/* let datosEmpleado = (idEmpleado) => {
-    setTimeout(() => {
-
-    }, 2000);
-} */
+let datosEmpleado = (idEmpleado) => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve(getEmployee(idEmpleado))
+        }, 2000);
+    });
+}
+async function fetchingN1e2 (){ 
+    try{
+        let n1e2 = await datosEmpleado(2);
+    }catch(err){
+        console.log(err);
+    }
+}
+fetchingN1e2();
+/* Nivell 2 - Exercici 1
+Crea una nova funció asíncrona que cridi a una altra que retorni 
+una Promise que efectuï la seva funció resolve() després de 2 segons 
+de la seva invocació. */
