@@ -55,18 +55,24 @@ let salaries = [{
     id: 3,
     salary: 2000
 }];
+let idEmpleado = 1;
 let getEmployee = () => {
-    let promesa21 = new Promise (function(resolve, reject){
-    resolve();
-    });
-    promesa21.then (res => {
-        employees.forEach(object => {
-            console.log("ID de Employees: "+object.id);
-        })
-        salaries.forEach(object => {
-            console.log("ID de Salaries: "+object.id);
-        })
-});};
+    return new Promise (function(resolve, reject){
+        if (employees.findIndex(x => x.id === idEmpleado)!=-1){
+            resolve();
+        }else{
+            reject();
+        }
+    })
+    .then(
+        function (value) {
+        let nombre = employees.find(data => data.id === idEmpleado);
+        console.log("La ID "+idEmpleado+" pertenece a "+nombre.name);
+        let salario = salaries.find(data => data.id === idEmpleado);
+        console.log("El salario de la ID "+idEmpleado+" es "+salario.salary);},
+        function(error) {console.log("ID no encontrada.");}  
+    );
+}
 getEmployee();
 /* Nivell 2 - Exercici 2
 Crea una altra arrow function getSalary() similar a l'anterior que rebi
