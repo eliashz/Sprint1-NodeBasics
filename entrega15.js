@@ -28,6 +28,9 @@ archive.finalize();
 /* Nivell 2 - Exercici 2
 Crea una funció que llisti per la consola el contingut del directori 
 d'usuari de l'ordinador utilizant Node Child Processes. */
-let file = fs.readdirSync("./");
-console.log(file);
-ey
+const cp = require('child_process');
+cp.exec('ls -lh', (error, stdout, stderr) => {
+    let file = fs.readdirSync("./");
+    console.log(file);
+    console.log(stdout);
+});
