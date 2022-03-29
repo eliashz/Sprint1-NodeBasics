@@ -37,6 +37,22 @@ exec('ls', () =>{
 Crea una funció que creï dos fitxers codificats en hexadecimal
 i en base64 respectivament, a partir del fitxer del nivell 1 */
 function codificacion(mensaje){
-
+    let archivoHex = 'archivoHex.txt';
+    let archivoBase64 = 'archivoBase64.txt';
+    //Hexadecimal
+    let hex = '';
+    let tempASCII, tempHex;
+    mensaje.split('').map( i => {
+        tempASCII = i.charCodeAt(0)
+        tempHex = tempASCII.toString(16);
+        hex = hex + tempHex + ' ';
+    });
+    hex = hex.trim();
+    fs.writeFileSync(archivoHex, hex);
+    //Base64
+    var base64 = btoa(texto);
+    fs.writeFileSync(archivoBase64, base64);
 }
 codificacion(texto);
+/* Crea una funció que guardi els fitxers del punt anterior, 
+ara encriptats amb l'algorisme aes-192-cbc, i esborri els fitxers inicials */
