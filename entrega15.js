@@ -19,3 +19,14 @@ const texto = fs.readFileSync(archivo, {encoding:'utf8'});
 console.log(texto);
 /* Nivell 2 - Exercici 1
 Crea una funció que comprimeixi el fitxer del nivell 1. */
+const archiver = require("archiver");
+var output = fs.createWriteStream('./prueba.zip');
+var archive = archiver('zip');
+archive.pipe(output);
+archive.append(fs.createReadStream('./prueba.txt'), {name: 'prueba.txt'});
+archive.finalize();
+/* Nivell 2 - Exercici 2
+Crea una funció que llisti per la consola el contingut del directori 
+d'usuari de l'ordinador utilizant Node Child Processes. */
+let file = fs.readdirSync("./");
+console.log(file);
