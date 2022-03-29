@@ -19,3 +19,4 @@ git checkout -b [rama]
 
 Entrega 1.5
 https://www.youtube.com/watch?v=aA7h_M85rjA
+Comprimir:https://www.youtube.com/watch?v=JxSsCqZ_xjw
