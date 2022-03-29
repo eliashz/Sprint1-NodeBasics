@@ -1,8 +1,8 @@
 # Sprint1. Node bàsics.
 Node Mac:
 https://www.digitalocean.com/community/tutorials/how-to-install-node-js-and-create-a-local-development-environment-on-macos
-$node --version
 
+$node --version
 $ code . 
 $ node index.js
 
