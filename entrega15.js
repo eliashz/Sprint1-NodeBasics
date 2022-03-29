@@ -3,7 +3,7 @@
 Nivell 1 - Exercici 1
 Crea una funció que imprimeixi recursivament un missatge 
 per la consola amb demores d'un segon. */
-let n = 0;
+let n = -1000;
 while (n<10000){
     setTimeout(() => {console.log('Imprimeixi recursivament un missatge');}, n+=1000);
 }
@@ -28,9 +28,11 @@ archive.finalize();
 /* Nivell 2 - Exercici 2
 Crea una funció que llisti per la consola el contingut del directori 
 d'usuari de l'ordinador utilizant Node Child Processes. */
-const cp = require('child_process');
-cp.exec('ls -lh', (error, stdout, stderr) => {
+const exec = require('child_process').exec;
+exec('ls', () =>{
     let file = fs.readdirSync("./");
     console.log(file);
-    console.log(stdout);
-});
+}); 
+/* Nivell 3 - Exercici 1
+Crea una funció que creï dos fitxers codificats en hexadecimal
+i en base64 respectivament, a partir del fitxer del nivell 1 */
