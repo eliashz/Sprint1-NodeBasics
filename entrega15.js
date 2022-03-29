@@ -16,7 +16,7 @@ fs.writeFileSync(archivo, contenido);
 /* Nivell 1 - Exercici 3
 Crea una altra funció que mostri per consola el contingut del fitxer de l'exercici anterior. */
 const texto = fs.readFileSync(archivo, {encoding:'utf8'});
-console.log(texto);
+console.log("Texto del N1E3: "+texto);
 /* Nivell 2 - Exercici 1
 Crea una funció que comprimeixi el fitxer del nivell 1. */
 const archiver = require("archiver");
@@ -36,3 +36,7 @@ exec('ls', () =>{
 /* Nivell 3 - Exercici 1
 Crea una funció que creï dos fitxers codificats en hexadecimal
 i en base64 respectivament, a partir del fitxer del nivell 1 */
+function codificacion(mensaje){
+
+}
+codificacion(texto);
