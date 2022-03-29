@@ -30,3 +30,4 @@ Crea una funció que llisti per la consola el contingut del directori
 d'usuari de l'ordinador utilizant Node Child Processes. */
 let file = fs.readdirSync("./");
 console.log(file);
+ey
