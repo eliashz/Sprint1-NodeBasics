@@ -21,20 +21,20 @@ Crea una altra funció que mostri per consola el contingut del fitxer de l'exerc
 let texto;
 function mostrarFichero(archivo){
     texto = fs.readFileSync(archivo, {encoding:'utf8'});
-    console.log("N1E3: "+texto);
+    return texto
 }
 mostrarFichero(archivo);
-/* Nivell 2 - Exercici 1  
+/* Nivell 2 - Exercici 1 - COMENTADO!!!!*********************************
 Crea una funció que comprimeixi el fitxer del nivell 1. */
 const archiver = require("archiver");
 function comprimir(archivo){
-    let output = fs.createWriteStream('./'+archivo);
+    let output = fs.createWriteStream('./'+archivo+'.zip');
     let archive = archiver('zip');
     archive.pipe(output);
     archive.append(fs.createReadStream('./'+archivo), {name: archivo});
     archive.finalize();
 }
-comprimir(archivo);
+//comprimir(archivo);
 /* Nivell 2 - Exercici 2 - COMENTADO!!!!*********************************
 Crea una funció que llisti per la consola el contingut del directori 
 d'usuari de l'ordinador utilizant Node Child Processes. */
@@ -49,9 +49,10 @@ function mostrarDirectorio(){
 /* Nivell 3 - Exercici 1
 Crea una funció que creï dos fitxers codificats en hexadecimal
 i en base64 respectivament, a partir del fitxer del nivell 1 */
+let ficheroBase64 = 'ficheroBase64.txt';
+let ficheroHex = 'ficheroHex.txt';
 function codificacion(mensaje){
     //Hexadecimal
-    let ficheroHex = 'ficheroHex.txt';
     let textoHex = '';
     let tempASCII, tempHex;
     mensaje.split('').map( i => {
@@ -62,7 +63,6 @@ function codificacion(mensaje){
     textoHex = textoHex.trim();
     crearFichero(ficheroHex, textoHex);
     //Base64
-    let ficheroBase64 = 'ficheroBase64.txt';
     let textoBase64 = btoa(mensaje);
     crearFichero(ficheroBase64, textoBase64);
 }
@@ -70,10 +70,10 @@ codificacion(texto);
 /* Crea una funció que guardi els fitxers del punt anterior, 
 ara encriptats amb l'algorisme aes-192-cbc, i esborri els fitxers inicials */
 let CryptoJS = require("crypto-js");
-let encrypted;
 let key = '0123456789abcdef';
 let iv = '0123456789abcdef';
-function encriptar(texto){
+let encrypted;
+function encriptar(fichero, texto){
     key = CryptoJS.enc.Utf8.parse(key);
     iv = CryptoJS.enc.Utf8.parse(iv);
     encrypted = CryptoJS.AES.encrypt(texto, key, {
@@ -82,11 +82,12 @@ function encriptar(texto){
         padding: CryptoJS.pad.Pkcs7
     });
     encrypted = encrypted.toString();
-    console.log("Encriptado: "+encrypted);
-    crearFichero('ficheroAES.txt', encrypted);
+    fs.unlinkSync('./'+fichero) //Borra los archivos
+    fichero = fichero.substring(0, fichero.length - 4);
+    crearFichero(fichero+"_ENCODED.txt", encrypted);
 }
-console.log('N3E1B');
-encriptar(mostrarFichero(archivo));
+encriptar(ficheroBase64, mostrarFichero(ficheroBase64));
+encriptar(ficheroHex, mostrarFichero(ficheroHex));
 /* Crea una altra funció que desencripti i descodifiqui els fitxers de 
 l'apartat anterior tornant a generar una còpia de l'inicial */
 let decrypted = CryptoJS.AES.decrypt(encrypted, key, {
@@ -94,7 +95,4 @@ let decrypted = CryptoJS.AES.decrypt(encrypted, key, {
     mode: CryptoJS.mode.CBC,
     padding: CryptoJS.pad.Pkcs7
 });
-console.log("Desencriptar: "+decrypted);
 decrypted = CryptoJS.enc.Utf8.stringify(decrypted);
-console.log("Desencriptar: "+decrypted);
-crearFichero('copiaFichero.txt', decrypted);
