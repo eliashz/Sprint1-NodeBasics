@@ -3,28 +3,28 @@
 Nivell 1 - Exercici 1 - COMENTADO!!!!*********************************
 Crea una funció que imprimeixi recursivament un missatge 
 per la consola amb demores d'un segon. */
-/* let n = -500;
+/* let n = -1000;
 (() => {while (n<5000){
-    setTimeout(() => {console.log('Imprimeixi recursivament un missatge');}, n+=500);
+    setTimeout(() => {console.log('Imprimeixi recursivament un missatge');}, n+=1000);
 }})(); */
 /* Nivell 1 - Exercici 2
 Crea una funció que, en executar-la, escrigui una frase en un fitxer. */
 const fs = require('fs');
-const archivo = 'ficheroN1E2.txt';
-const contenido = "Escrigui una frase en un fitxer."
-function crearFichero(archivo, contenido){
+let archivo = 'ficheroN1E2.txt';
+let contenido = "Escrigui una frase en un fitxer."
+let crearFichero = (archivo, contenido) => {
     fs.writeFileSync(archivo, contenido);
-}
+}   
 crearFichero(archivo, contenido);
 /* Nivell 1 - Exercici 3
 Crea una altra funció que mostri per consola el contingut del fitxer de l'exercici anterior. */
+let texto;
 function mostrarFichero(archivo){
-    let texto = fs.readFileSync(archivo, {encoding:'utf8'});
-    console.log("Texto del N1E3: "+texto);
-    return texto
+    texto = fs.readFileSync(archivo, {encoding:'utf8'});
+    console.log("N1E3: "+texto);
 }
 mostrarFichero(archivo);
-/* Nivell 2 - Exercici 1
+/* Nivell 2 - Exercici 1  
 Crea una funció que comprimeixi el fitxer del nivell 1. */
 const archiver = require("archiver");
 function comprimir(archivo){
@@ -66,11 +66,11 @@ function codificacion(mensaje){
     let textoBase64 = btoa(mensaje);
     crearFichero(ficheroBase64, textoBase64);
 }
-codificacion(mostrarFichero(archivo));
+codificacion(texto);
 /* Crea una funció que guardi els fitxers del punt anterior, 
 ara encriptats amb l'algorisme aes-192-cbc, i esborri els fitxers inicials */
 let CryptoJS = require("crypto-js");
-let  encrypted;
+let encrypted;
 let key = '0123456789abcdef';
 let iv = '0123456789abcdef';
 function encriptar(texto){
@@ -82,8 +82,10 @@ function encriptar(texto){
         padding: CryptoJS.pad.Pkcs7
     });
     encrypted = encrypted.toString();
+    console.log("Encriptado: "+encrypted);
     crearFichero('ficheroAES.txt', encrypted);
 }
+console.log('N3E1B');
 encriptar(mostrarFichero(archivo));
 /* Crea una altra funció que desencripti i descodifiqui els fitxers de 
 l'apartat anterior tornant a generar una còpia de l'inicial */
@@ -92,6 +94,7 @@ let decrypted = CryptoJS.AES.decrypt(encrypted, key, {
     mode: CryptoJS.mode.CBC,
     padding: CryptoJS.pad.Pkcs7
 });
+console.log("Desencriptar: "+decrypted);
 decrypted = CryptoJS.enc.Utf8.stringify(decrypted);
-console.log(decrypted);
-crearFichero('copiaFicheroN1E2.txt', decrypted);
+console.log("Desencriptar: "+decrypted);
+crearFichero('copiaFichero.txt', decrypted);
