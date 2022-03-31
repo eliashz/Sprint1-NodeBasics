@@ -49,7 +49,6 @@ function mostrarDirectorio(){
 /* Nivell 3 - Exercici 1
 Crea una funció que creï dos fitxers codificats en hexadecimal
 i en base64 respectivament, a partir del fitxer del nivell 1 */
-global.Buffer = global.Buffer 
 require('buffer').Buffer;
 let ficheroBase64 = 'ficheroBase64.txt';
 let ficheroHex = 'ficheroHex.txt';
@@ -101,18 +100,20 @@ function desencriptarDescodificar(fichero, textoEncriptado){
         padding: CryptoJS.pad.Pkcs7
     });
     decrypted = CryptoJS.enc.Utf8.stringify(decrypted);
+    console.log("Desc "+decrypted);
     //Descodificar
     let textoDesc = '';
-    if (fichero=='ficheroN1E2HexCopia.txt'){
-        textoEncriptado.split(' ').map( (i) => {
+    if (fichero=='ficheroHex_ENCODED.txt'){
+        decrypted.split(' ').map( (i) => {
             tempAsciiCode = parseInt(i, 16);
             textoDesc = textoDesc + String.fromCharCode(tempAsciiCode);
         });
+        crearFichero('ficheroN1E2HexCopia.txt', textoDesc);
     }else{
-    
-    }
-    crearFichero(fichero, textoDesc);
+        textoDesc = Buffer.from(decrypted, 'base64').toString('utf-8');
+        crearFichero('ficheroN1E2Base64Copia.txt', textoDesc);
+    } 
 }
-//desencriptarDescodificar('ficheroBase64_ENCODED.txt',mostrarFichero('ficheroBase64_ENCODED.txt'));
-desencriptarDescodificar(ficheroHex, mostrarFichero(ficheroHex));
+//desencriptarDescodificar('ficheroHex_ENCODED.txt', mostrarFichero('ficheroHex_ENCODED.txt'));
+desencriptarDescodificar('ficheroBase64_ENCODED.txt', mostrarFichero('ficheroBase64_ENCODED.txt'));
 
