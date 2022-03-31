@@ -1,12 +1,12 @@
 /* Entrega 1.5: Node Utils
 
-Nivell 1 - Exercici 1 - COMENTADO!!!!*********************************
+Nivell 1 - Exercici 1
 Crea una funció que imprimeixi recursivament un missatge 
 per la consola amb demores d'un segon. */
-/* let n = -1000;
+let n = -1000;
 (() => {while (n<5000){
     setTimeout(() => {console.log('Imprimeixi recursivament un missatge');}, n+=1000);
-}})(); */
+}})();
 /* Nivell 1 - Exercici 2
 Crea una funció que, en executar-la, escrigui una frase en un fitxer. */
 const fs = require('fs');
@@ -18,13 +18,12 @@ let crearFichero = (archivo, contenido) => {
 crearFichero(archivo, contenido);
 /* Nivell 1 - Exercici 3
 Crea una altra funció que mostri per consola el contingut del fitxer de l'exercici anterior. */
-let texto;
 function mostrarFichero(archivo){
-    texto = fs.readFileSync(archivo, {encoding:'utf8'});
+    let texto = fs.readFileSync(archivo, {encoding:'utf8'});
     return texto
 }
 mostrarFichero(archivo);
-/* Nivell 2 - Exercici 1 - COMENTADO!!!!*********************************
+/* Nivell 2 - Exercici 1
 Crea una funció que comprimeixi el fitxer del nivell 1. */
 const archiver = require("archiver");
 function comprimir(archivo){
@@ -34,8 +33,8 @@ function comprimir(archivo){
     archive.append(fs.createReadStream('./'+archivo), {name: archivo});
     archive.finalize();
 }
-//comprimir(archivo);
-/* Nivell 2 - Exercici 2 - COMENTADO!!!!*********************************
+comprimir(archivo);
+/* Nivell 2 - Exercici 2
 Crea una funció que llisti per la consola el contingut del directori 
 d'usuari de l'ordinador utilizant Node Child Processes. */
 function mostrarDirectorio(){ 
@@ -45,7 +44,7 @@ function mostrarDirectorio(){
         console.log(file);
     }); 
 }
-//mostrarDirectorio();
+mostrarDirectorio();
 /* Nivell 3 - Exercici 1
 Crea una funció que creï dos fitxers codificats en hexadecimal
 i en base64 respectivament, a partir del fitxer del nivell 1 */
@@ -83,7 +82,7 @@ function encriptar(fichero, texto){
         padding: CryptoJS.pad.Pkcs7
     });
     encrypted = encrypted.toString();
-    //fs.unlinkSync('./'+fichero) //Borra los archivos
+    fs.unlinkSync('./'+fichero) //Borra los archivos
     fichero = fichero.substring(0, fichero.length - 4); //Borra .txt
     crearFichero(fichero+"_ENCODED.txt", encrypted);
 }
@@ -93,14 +92,12 @@ encriptar(ficheroHex, mostrarFichero(ficheroHex));
 l'apartat anterior tornant a generar una còpia de l'inicial */
 function desencriptarDescodificar(fichero, textoEncriptado){
     //Desencriptar
-    console.log(textoEncriptado);
     let decrypted = CryptoJS.AES.decrypt(textoEncriptado, key, {
         iv: iv,
         mode: CryptoJS.mode.CBC,
         padding: CryptoJS.pad.Pkcs7
     });
     decrypted = CryptoJS.enc.Utf8.stringify(decrypted);
-    console.log("Desc "+decrypted);
     //Descodificar
     let textoDesc = '';
     if (fichero=='ficheroHex_ENCODED.txt'){
@@ -114,6 +111,6 @@ function desencriptarDescodificar(fichero, textoEncriptado){
         crearFichero('ficheroN1E2Base64Copia.txt', textoDesc);
     } 
 }
-//desencriptarDescodificar('ficheroHex_ENCODED.txt', mostrarFichero('ficheroHex_ENCODED.txt'));
+desencriptarDescodificar('ficheroHex_ENCODED.txt', mostrarFichero('ficheroHex_ENCODED.txt'));
 desencriptarDescodificar('ficheroBase64_ENCODED.txt', mostrarFichero('ficheroBase64_ENCODED.txt'));
 
