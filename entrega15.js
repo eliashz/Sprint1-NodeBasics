@@ -49,6 +49,8 @@ function mostrarDirectorio(){
 /* Nivell 3 - Exercici 1
 Crea una funció que creï dos fitxers codificats en hexadecimal
 i en base64 respectivament, a partir del fitxer del nivell 1 */
+global.Buffer = global.Buffer 
+require('buffer').Buffer;
 let ficheroBase64 = 'ficheroBase64.txt';
 let ficheroHex = 'ficheroHex.txt';
 function codificacion(mensaje){
@@ -63,10 +65,10 @@ function codificacion(mensaje){
     textoHex = textoHex.trim();
     crearFichero(ficheroHex, textoHex);
     //Base64
-    let textoBase64 = btoa(mensaje);
+    let textoBase64 = Buffer.from(mensaje, 'binary').toString('base64');
     crearFichero(ficheroBase64, textoBase64);
 }
-codificacion(texto);
+codificacion(mostrarFichero(archivo));
 /* Crea una funció que guardi els fitxers del punt anterior, 
 ara encriptats amb l'algorisme aes-192-cbc, i esborri els fitxers inicials */
 let CryptoJS = require("crypto-js");
@@ -82,17 +84,35 @@ function encriptar(fichero, texto){
         padding: CryptoJS.pad.Pkcs7
     });
     encrypted = encrypted.toString();
-    fs.unlinkSync('./'+fichero) //Borra los archivos
-    fichero = fichero.substring(0, fichero.length - 4);
+    //fs.unlinkSync('./'+fichero) //Borra los archivos
+    fichero = fichero.substring(0, fichero.length - 4); //Borra .txt
     crearFichero(fichero+"_ENCODED.txt", encrypted);
 }
 encriptar(ficheroBase64, mostrarFichero(ficheroBase64));
 encriptar(ficheroHex, mostrarFichero(ficheroHex));
 /* Crea una altra funció que desencripti i descodifiqui els fitxers de 
 l'apartat anterior tornant a generar una còpia de l'inicial */
-let decrypted = CryptoJS.AES.decrypt(encrypted, key, {
-    iv: iv,
-    mode: CryptoJS.mode.CBC,
-    padding: CryptoJS.pad.Pkcs7
-});
-decrypted = CryptoJS.enc.Utf8.stringify(decrypted);
+function desencriptarDescodificar(fichero, textoEncriptado){
+    //Desencriptar
+    console.log(textoEncriptado);
+    let decrypted = CryptoJS.AES.decrypt(textoEncriptado, key, {
+        iv: iv,
+        mode: CryptoJS.mode.CBC,
+        padding: CryptoJS.pad.Pkcs7
+    });
+    decrypted = CryptoJS.enc.Utf8.stringify(decrypted);
+    //Descodificar
+    let textoDesc = '';
+    if (fichero=='ficheroN1E2HexCopia.txt'){
+        textoEncriptado.split(' ').map( (i) => {
+            tempAsciiCode = parseInt(i, 16);
+            textoDesc = textoDesc + String.fromCharCode(tempAsciiCode);
+        });
+    }else{
+    
+    }
+    crearFichero(fichero, textoDesc);
+}
+//desencriptarDescodificar('ficheroBase64_ENCODED.txt',mostrarFichero('ficheroBase64_ENCODED.txt'));
+desencriptarDescodificar(ficheroHex, mostrarFichero(ficheroHex));
+
