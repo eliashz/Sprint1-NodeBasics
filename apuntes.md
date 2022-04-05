@@ -30,7 +30,7 @@ git checkout -b [rama]
 [Comprimir](https://www.youtube.com/watch?v=JxSsCqZ_xjw)
 
 ### Entrega 1.6
-``npm init``  
+``npm init -y``  
 
 ``npm install --save-dev jest``
 
