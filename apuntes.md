@@ -31,6 +31,7 @@ git checkout -b [rama]
 
 ### Entrega 1.6
 ``npm init  
+
 npm install --save-dev jest``
 
 [Tutorial Markdown](https://www.youtube.com/watch?v=UvaZzOkM1j0&t=81s)  
