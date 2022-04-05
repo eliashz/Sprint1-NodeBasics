@@ -38,7 +38,7 @@ git checkout -b [rama]
 [Jest Docs](https://jestjs.io/es-ES/docs/getting-started)  
 [Test](https://www.youtube.com/watch?v=_xxVJdGNMrs)  
 [Introducción a TDD en JavaScript con Jest](https://www.youtube.com/watch?v=G43sWqt8T98)  
-[Unit Testing in Javascript | Writing Automated Tests With Jest](https://www.youtube.com/watch?v=89Pl2Uok8xc)  
+[Unit Testing in Javascript | Writing Automated Tests With Jest](https://www.youtube.com/watch?v=hz0_q1MJa2k)  
 [TDD in JavaScript | Test Driven Development](https://youtu.be/89Pl2Uok8xc)  
 [Testing Node Server with Jest and Supertest](https://youtu.be/FKnzS_icp20)  
 [Jest con Promises](https://www.youtube.com/watch?v=UUAURZVRc34)  
