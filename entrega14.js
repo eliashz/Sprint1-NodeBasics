@@ -73,13 +73,12 @@ de la seva invocació. */
 let funcionN2E1 = () => {
     return new Promise (function(resolve, reject){
         setTimeout(() => {resolve()}, 2000);})
-    .then(
-        function(value) {console.log("Console.log del Nivel 2 Ejercicio 1")},
-    ); 
 }
 async function fetchingN2E1 (){
     try{
-        let n2e1 = funcionN2E1();
+        let n2e1 = funcionN2E1().then(
+        function(value) {console.log("Console.log del Nivel 2 Ejercicio 1")},
+    ); ;
     }catch(err){
         console.log(err);
     }
