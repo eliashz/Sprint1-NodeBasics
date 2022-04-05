@@ -3,10 +3,8 @@
 https://www.digitalocean.com/community/tutorials/how-to-install-node-js-and-create-a-local-development-environment-on-macos)  
 [3hr de Node](https://www.youtube.com/watch?v=RLtyhwFtXQA)
 
-node --version
-
-code . 
-
+node --version  
+code .  
 node index.js
 
 [GITHUB](https://www.freecodecamp.org/espanol/news/como-hacer-tu-primer-pull-request-en-github/)
@@ -24,9 +22,9 @@ cd [repositorio]
 git checkout -b [rama]
 
 ### Entrega 1.3
-[Promesas](https://www.youtube.com/watch?v=Uxb_hhdy2KM)
-
+[Promesas](https://www.youtube.com/watch?v=Uxb_hhdy2KM)  
 [Más promesas](https://www.youtube.com/watch?v=9AbdrNR1vFU)
+
 ### Entrega 1.5
 [Escribir archivo](https://www.youtube.com/watch?v=aA7h_M85rjA)  
 [Comprimir](https://www.youtube.com/watch?v=JxSsCqZ_xjw)
