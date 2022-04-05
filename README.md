@@ -37,3 +37,4 @@ git checkout -b [rama]
 [TDD in JavaScript | Test Driven Development](https://youtu.be/89Pl2Uok8xc)  
 [Testing Node Server with Jest and Supertest](https://youtu.be/FKnzS_icp20)  
 [Jest con Promises](https://www.youtube.com/watch?v=UUAURZVRc34)
+[Test async](https://www.youtube.com/watch?v=Y4PHrT6Cc_A)
