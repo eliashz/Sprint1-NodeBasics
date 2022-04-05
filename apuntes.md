@@ -43,4 +43,4 @@ git checkout -b [rama]
 [Testing Node Server with Jest and Supertest](https://youtu.be/FKnzS_icp20)  
 [Jest con Promises](https://www.youtube.com/watch?v=UUAURZVRc34)  
 [Test async](https://www.youtube.com/watch?v=Y4PHrT6Cc_A)  
-[Introducción a TDD en JavaScript con Jest](https://www.youtube.com/watch?v=G43sWqt8T98)
+
