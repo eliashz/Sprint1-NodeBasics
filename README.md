@@ -28,11 +28,13 @@ git checkout -b [rama]
 
 [Más promesas](https://www.youtube.com/watch?v=9AbdrNR1vFU)
 ### Entrega 1.5
-[Escribir archivo](https://www.youtube.com/watch?v=aA7h_M85rjA)
-
+[Escribir archivo](https://www.youtube.com/watch?v=aA7h_M85rjA)  
 [Comprimir](https://www.youtube.com/watch?v=JxSsCqZ_xjw)
 
 ### Entrega 1.6
-[Tutorial Markdown](https://www.youtube.com/watch?v=UvaZzOkM1j0&t=81s)
-
-[Test](https://www.youtube.com/watch?v=_xxVJdGNMrs)
+[Tutorial Markdown](https://www.youtube.com/watch?v=UvaZzOkM1j0&t=81s)  
+[Test](https://www.youtube.com/watch?v=_xxVJdGNMrs)  
+[Introducción a TDD en JavaScript con Jest](https://www.youtube.com/watch?v=G43sWqt8T98)  
+[Unit Testing in Javascript | Writing Automated Tests With Jest](https://www.youtube.com/watch?v=89Pl2Uok8xc)
+[TDD in JavaScript | Test Driven Development](https://youtu.be/89Pl2Uok8xc)    
+[Testing Node Server with Jest and Supertest](https://youtu.be/FKnzS_icp20)
