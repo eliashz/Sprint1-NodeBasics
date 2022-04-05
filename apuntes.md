@@ -30,9 +30,9 @@ git checkout -b [rama]
 [Comprimir](https://www.youtube.com/watch?v=JxSsCqZ_xjw)
 
 ### Entrega 1.6
-``npm init  
+``npm init´´  
 
-npm install --save-dev jest``
+``npm install --save-dev jest``
 
 [Tutorial Markdown](https://www.youtube.com/watch?v=UvaZzOkM1j0&t=81s)  
 [Jest Docs](https://jestjs.io/es-ES/docs/getting-started)  
