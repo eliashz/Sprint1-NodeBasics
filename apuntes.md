@@ -30,7 +30,11 @@ git checkout -b [rama]
 [Comprimir](https://www.youtube.com/watch?v=JxSsCqZ_xjw)
 
 ### Entrega 1.6
+``npm init
+npm install --save-dev jest``
+
 [Tutorial Markdown](https://www.youtube.com/watch?v=UvaZzOkM1j0&t=81s)  
+[Jest Docs](https://jestjs.io/es-ES/docs/getting-started)  
 [Test](https://www.youtube.com/watch?v=_xxVJdGNMrs)  
 [Introducción a TDD en JavaScript con Jest](https://www.youtube.com/watch?v=G43sWqt8T98)  
 [Unit Testing in Javascript | Writing Automated Tests With Jest](https://www.youtube.com/watch?v=89Pl2Uok8xc)  
