@@ -1,3 +1,4 @@
+//Entrega 1.2: Classes & Arrow Functions
 //Nivell 1 Exercici 1 
 console.log((() => {
     return "Elías" + "Huerta"; 
