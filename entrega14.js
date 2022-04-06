@@ -63,8 +63,12 @@ Crea una funció asíncrona que rebi un id d'empleat i imprimeixi
 per pantalla el nom de l'empleat i el seu salari, usant les 
 funcions que has definit a l'exercici anterior. */
 const datosEmpleado = async(id, employee) => {
-    const employee12 = await getEmployee(id);
-    const salary = await getSalary(employee);
+    try{
+        const employee12 = await getEmployee(id);
+        const salary = await getSalary(employee);
+    }catch (error){
+        console.log(error);
+    }
 }
 let id = 2;
 let employee = employees[2];
