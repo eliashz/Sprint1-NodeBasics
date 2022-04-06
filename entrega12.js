@@ -15,14 +15,14 @@ class Persona {
     }
 }
 new Persona ("Maynard").dirNom();
-//Nivell 3 Exercici 1 - FALTA!!
-function Fruta (){
-    this.frutaNombre = "frutaNombre";
+//Nivell 3 Exercici 1
+let Fruta = function() {
+    if (this.constructor === Fruta) {
+      throw new Error("No se puede instanciar una clase abstracta.");
+    }
+};
+
+Fruta.prototype.say = function() {
+    throw new Error("Método abstracto.");
 }
-Fruta.prototype.display=function(){ return "El nombre de la fruta es: "+this.frutaNombre}
-function Comida (nombreComida){
-    this.frutaNombre=nombreComida;
-}
-Comida.prototype=Object.create(Fruta.prototype);
-var comida = new Comida("Pera limonera");
-console.log(comida.display()); 
+let pera = new Fruta();
