@@ -4,7 +4,7 @@ function nombre (nom){
         console.log(nom);
 }
 nombre ("Elías Huerta");
-//Nivell 2 Exercici 1
+//Nivell 2 Exercici 1 
 let nom = "Elías";
 let apellido = "Huerta";
 let mensaje = `Hola, ${nom} ${apellido}.`;
