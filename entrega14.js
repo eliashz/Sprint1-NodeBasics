@@ -1,5 +1,4 @@
 /* Entrega 1.4: Async / Await
-
 Nivell 1 - Exercici 1
 Donats els objectes employees i salaries, crea una arrow
 function getEmployee que retorni una Promise efectuant la 
@@ -26,7 +25,6 @@ let salaries = [{
     id: 3,
     salary: 2000
 }];
-let id = 2;
 let getEmployee = (idEmpleado) => {
     return new Promise (function(resolve, reject){
         if (employees.findIndex(x => x.id === idEmpleado)!=-1){
@@ -44,8 +42,6 @@ let getEmployee = (idEmpleado) => {
         function(error) {console.log("ID no encontrada.");}  
     );
 }
-getEmployee(id);
-let employee = employees[2];
 let getSalary = (employee) => {
   return new Promise (function(resolve, reject){
       if (employees.findIndex(x => x.id === employee.id)!=-1){
@@ -66,21 +62,13 @@ let getSalary = (employee) => {
 Crea una funció asíncrona que rebi un id d'empleat i imprimeixi
 per pantalla el nom de l'empleat i el seu salari, usant les 
 funcions que has definit a l'exercici anterior. */
-let datosEmpleado = (idEmpleado) => {
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            resolve(getEmployee(idEmpleado))
-        }, 1000);
-    });
+const datosEmpleado = async(id, employee) => {
+    const employee12 = await getEmployee(id);
+    const salary = await getSalary(employee);
 }
-async function fetchingN1E2 (){ 
-    try{
-        let n1e2 = await datosEmpleado(2);
-    }catch(err){
-        console.log(err);
-    }
-}
-fetchingN1E2();
+let id = 2;
+let employee = employees[2];
+datosEmpleado(id, employee);
 /* Nivell 2 - Exercici 1
 Crea una nova funció asíncrona que cridi a una altra que retorni 
 una Promise que efectuï la seva funció resolve() després de 2 segons 
