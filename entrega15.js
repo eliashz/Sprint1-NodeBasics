@@ -1,4 +1,4 @@
-/* Entrega 1.5: Node Utils
+/* Entrega 1.5: Node Utils 
 
 Nivell 1 - Exercici 1
 Crea una funció que imprimeixi recursivament un missatge 
