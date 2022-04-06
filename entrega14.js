@@ -1,4 +1,5 @@
 /* Entrega 1.4: Async / Await
+
 Nivell 1 - Exercici 1
 Donats els objectes employees i salaries, crea una arrow
 function getEmployee que retorni una Promise efectuant la 
@@ -25,7 +26,7 @@ let salaries = [{
     id: 3,
     salary: 2000
 }];
-let employee = employees[1];
+let id = 2;
 let getEmployee = (idEmpleado) => {
     return new Promise (function(resolve, reject){
         if (employees.findIndex(x => x.id === idEmpleado)!=-1){
@@ -40,14 +41,27 @@ let getEmployee = (idEmpleado) => {
         console.log("La ID "+idEmpleado+" pertenece a "+nombre.name);
         let salario = salaries.find(data => data.id === idEmpleado);
         console.log("El salario de la ID "+idEmpleado+" es "+salario.salary);},
-        function(error) {console.log("ID no encontrada.");}
+        function(error) {console.log("ID no encontrada.");}  
     );
 }
+getEmployee(id);
+let employee = employees[2];
 let getSalary = (employee) => {
-    let sal = salaries.find(data => data.id === employee.id);
-    console.log("El salario es de "+sal.salary);
-}
-getSalary(employee); 
+  return new Promise (function(resolve, reject){
+      if (employees.findIndex(x => x.id === employee.id)!=-1){
+          resolve();
+      }else{
+          reject();
+      }
+  })
+  .then(
+      function (value) {
+        let obj = salaries.find(data => data.id === employee.id);
+        console.log("El salario es de "+obj.salary);
+      },
+      function(error) {console.log("ID no encontrada.");}  
+  );
+} 
 /* Nivell 1 - Exercici 2
 Crea una funció asíncrona que rebi un id d'empleat i imprimeixi
 per pantalla el nom de l'empleat i el seu salari, usant les 
