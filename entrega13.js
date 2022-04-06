@@ -58,8 +58,7 @@ let salaries = [{
     id: 3,
     salary: 2000
 }];
-let idEmpleado = 1;
-let getEmployee = () => {
+let getEmployee = (idEmpleado) => {
     return new Promise (function(resolve, reject){
         if (employees.findIndex(x => x.id === idEmpleado)!=-1){
             resolve();
@@ -76,7 +75,7 @@ let getEmployee = () => {
         function(error) {console.log("ID no encontrada.");}  
     );
 }
-getEmployee();
+getEmployee(1);
 /* Nivell 2 - Exercici 2
 Crea una altra arrow function getSalary() similar a l'anterior que rebi
 com a paràmetre un objecte employee i retorni el seu salari.*/
@@ -92,7 +91,7 @@ l'execució de les dues promises. */
 new Promise (function (resolve, reject) {
     resolve();
 })
-.then (function(value) {getEmployee()})
+.then (function(value) {getEmployee(2)})
 .then (function(value) {getSalary(employee)})
 /* Nivell 3 - Exercici 1
 Fixa un element catch a la invocació del nivell anterior que 
