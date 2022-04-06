@@ -67,7 +67,7 @@ const datosEmpleado = async(id, employee) => {
         const employee12 = await getEmployee(id);
         const salary = await getSalary(employee);
     }catch (error){
-        console.log(error);
+        throw error;
     }
 }
 let id = 2;
