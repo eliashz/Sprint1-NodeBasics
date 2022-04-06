@@ -1,3 +1,4 @@
+ 
 /* Nivel 1 - Exercici 1
 Crea una funció que retorni una Promise que invoqui la funció resolve() o reject() que rep. 
 Invoca-la passant-li les dues funcions de manera que imprimeixin un missatge diferent depenent 
@@ -12,8 +13,8 @@ let funcionN1E1 = () => {
         }    
     })
     .then(
-        function(value) {console.log("Bien (N1E1)")},
-        function(error) {console.log("Error (N1E1)")}
+        (value) => {console.log("Bien (N1E1)")},
+        (error) => {console.log("Error (N1E1)")}
     ); 
 }
 funcionN1E1();
@@ -58,6 +59,7 @@ let salaries = [{
     id: 3,
     salary: 2000
 }];
+let id = 2;
 let getEmployee = (idEmpleado) => {
     return new Promise (function(resolve, reject){
         if (employees.findIndex(x => x.id === idEmpleado)!=-1){
@@ -75,11 +77,11 @@ let getEmployee = (idEmpleado) => {
         function(error) {console.log("ID no encontrada.");}  
     );
 }
-getEmployee(1);
+getEmployee(id);
 /* Nivell 2 - Exercici 2
 Crea una altra arrow function getSalary() similar a l'anterior que rebi
 com a paràmetre un objecte employee i retorni el seu salari.*/
-let employee = employees[1];
+let employee = employees[2];
 let getSalary = (employee) => {
   return new Promise (function(resolve, reject){
       if (employees.findIndex(x => x.id === employee.id)!=-1){
@@ -93,20 +95,16 @@ let getSalary = (employee) => {
         let obj = salaries.find(data => data.id === employee.id);
         console.log("El salario es de "+obj.salary);
       },
-
       function(error) {console.log("ID no encontrada.");}  
   );
 }
-getSalary(employee); 
+//getSalary(employee); 
 /* Nivell 2 - Exercici 3
 Invoca la primera funció getEmployee() i després getSalary() niant 
 l'execució de les dues promises. */
-new Promise (function (resolve, reject) {
-    resolve();
-})
-.then (function(value) {getEmployee(2)})
-.then (function(value) {getSalary(employee)})
+getEmployee(id)
+    .then(getSalary(employee))
 /* Nivell 3 - Exercici 1
 Fixa un element catch a la invocació del nivell anterior que 
 capturi qualsevol error i el mostri per la consola. */
-.catch(function(error) {console.log("Error");});
+    .catch(function(error) {console.log("Error");});
