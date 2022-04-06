@@ -81,8 +81,21 @@ Crea una altra arrow function getSalary() similar a l'anterior que rebi
 com a paràmetre un objecte employee i retorni el seu salari.*/
 let employee = employees[1];
 let getSalary = (employee) => {
-    let obj = salaries.find(data => data.id === employee.id);
-    console.log("El salario es de "+obj.salary);
+  return new Promise (function(resolve, reject){
+      if (employees.findIndex(x => x.id === employee.id)!=-1){
+          resolve();
+      }else{
+          reject();
+      }
+  })
+  .then(
+      function (value) {
+        let obj = salaries.find(data => data.id === employee.id);
+        console.log("El salario es de "+obj.salary);
+      },
+
+      function(error) {console.log("ID no encontrada.");}  
+  );
 }
 getSalary(employee); 
 /* Nivell 2 - Exercici 3
