@@ -47,3 +47,4 @@ node index.js
 [Jest con Promises](https://www.youtube.com/watch?v=UUAURZVRc34)  
 [Test async](https://www.youtube.com/watch?v=Y4PHrT6Cc_A)  
 [Canal Jest YouTube](https://www.youtube.com/c/ScaffoldHub/video)  
+[Mock](https://pawelgrzybek.com/mocking-functions-and-modules-with-jest/)
