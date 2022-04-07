@@ -22,7 +22,7 @@ node index.js
 ``git remote add origin [https...]`` -> sale al crear el repositorio  
 ``git clone [https...]``  
 ``cd [repositorio]  ``  
-``git checkout -b [rama]``
+``git checkout -b [rama]``  
 
 ### Entrega 1.3
 [Promesas](https://www.youtube.com/watch?v=Uxb_hhdy2KM)  
