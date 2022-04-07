@@ -58,6 +58,10 @@ let getSalary = (employee) => {
       function(error) {console.log("ID no encontrada.");}  
   );
 } 
+let employee = employees[2];
+let id = 2;
+getSalary(employee);
+getEmployee(id);
 /* Nivell 1 - Exercici 2
 Crea una funció asíncrona que rebi un id d'empleat i imprimeixi
 per pantalla el nom de l'empleat i el seu salari, usant les 
