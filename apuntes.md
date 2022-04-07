@@ -12,11 +12,11 @@ node index.js
 ``git config --global user.name "Tu nombre"``  
 ``git config --global user.email "Tu correo"``
 
-git init -> una vez por repositorio  
-git add index.js // git add . -> cambios  
-git push   
-git status -s  
-git commit -m "Comentarios"  
+``git init`` -> una vez por repositorio  
+``git add index.js`` // ``git add .`` -> cambios  
+``git push ``  
+``git status -s``  
+``git commit -m "Comentarios"  ``
 git log --oneline -> Genera un log  
 git reset --hard [código del log]  
 git remote add origin https... -> sale al crear el repositorio  
