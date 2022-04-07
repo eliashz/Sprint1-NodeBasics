@@ -9,7 +9,7 @@ node index.js
 
 [GITHUB](https://www.freecodecamp.org/espanol/news/como-hacer-tu-primer-pull-request-en-github/)
 
-git config --global user.name "Tu nombre"  
+``git config --global user.name "Tu nombre"  
 git config --global user.email "Tu correo"
 
 git init -> una vez por repositorio  
@@ -22,7 +22,7 @@ git reset --hard [código del log]
 git remote add origin https... -> sale al crear el repositorio  
 git clone [https...]
 cd [repositorio]  
-git checkout -b [rama]
+git checkout -b [rama]``
 
 ### Entrega 1.3
 [Promesas](https://www.youtube.com/watch?v=Uxb_hhdy2KM)  
