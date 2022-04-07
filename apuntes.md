@@ -18,10 +18,10 @@ node index.js
 ``git status -s``  
 ``git commit -m "Comentarios"  ``  
 ``git log --oneline -> Genera un log  ``
-``git reset --hard [código del log]  ``
+``git reset --hard [código del log]  ``  
 ``git remote add origin [https...]`` -> sale al crear el repositorio  
-``git clone [https...]``
-``cd [repositorio]  ``
+``git clone [https...]``  
+``cd [repositorio]  ``  
 ``git checkout -b [rama]``
 
 ### Entrega 1.3
