@@ -17,7 +17,7 @@ node index.js
 ``git push ``  
 ``git status -s``  
 ``git commit -m "Comentarios"  ``  
-``git log --oneline -> Genera un log  ``
+``git log --oneline`` -> Genera un log  
 ``git reset --hard [código del log]  ``  
 ``git remote add origin [https...]`` -> sale al crear el repositorio  
 ``git clone [https...]``  
