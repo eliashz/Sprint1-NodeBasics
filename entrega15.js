@@ -20,6 +20,7 @@ crearFichero(archivo, contenido);
 Crea una altra funció que mostri per consola el contingut del fitxer de l'exercici anterior. */
 function mostrarFichero(archivo){
     let texto = fs.readFileSync(archivo, {encoding:'utf8'});
+    console.log(texto);
     return texto
 }
 mostrarFichero(archivo);
@@ -37,14 +38,13 @@ comprimir(archivo);
 /* Nivell 2 - Exercici 2
 Crea una funció que llisti per la consola el contingut del directori 
 d'usuari de l'ordinador utilizant Node Child Processes. */
-function mostrarDirectorio(){ 
+function mostrarDirectorio(carpeta){ 
     let exec = require('child_process').exec;
-    exec('ls', () =>{
-        let file = fs.readdirSync("./");
-        console.log(file);
-    }); 
+          exec(carpeta, (err, stdout, stderr) => { 
+            console.log("Contenido del directorio: "+stdout);
+        });
 }
-mostrarDirectorio();
+mostrarDirectorio('ls'); //cambiar para windows *** dir
 /* Nivell 3 - Exercici 1
 Crea una funció que creï dos fitxers codificats en hexadecimal
 i en base64 respectivament, a partir del fitxer del nivell 1 */
@@ -113,4 +113,3 @@ function desencriptarDescodificar(fichero, textoEncriptado){
 }
 desencriptarDescodificar('ficheroHex_ENCODED.txt', mostrarFichero('ficheroHex_ENCODED.txt'));
 desencriptarDescodificar('ficheroBase64_ENCODED.txt', mostrarFichero('ficheroBase64_ENCODED.txt'));
-
