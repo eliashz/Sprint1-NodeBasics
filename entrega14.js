@@ -78,10 +78,7 @@ let funcionN2E1 = () => {
 }
 async function fetchingN2E1 (){
     try{
-        let n2e1 = funcionN2E1().then(
-        value => console.log(value),
-        error => console.log(error)
-    ); 
+        funcionN2E1().then(value => console.log(value)); 
     }catch(error){
         console.log(error);
     }
