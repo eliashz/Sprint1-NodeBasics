@@ -74,16 +74,16 @@ una Promise que efectuï la seva funció resolve() després de 2 segons
 de la seva invocació. */
 let funcionN2E1 = () => {
     return new Promise ((resolve, reject) => {
-        setTimeout(() => {resolve()}, 2000);})
+        setTimeout(() => {resolve("Console.log del Nivel 2 Ejercicio 1")}, 2000);})
 }
 async function fetchingN2E1 (){
     try{
         let n2e1 = funcionN2E1().then(
-        value => {console.log("Console.log del Nivel 2 Ejercicio 1")},
+        value => console.log(value),
         error => console.log(error)
     ); 
-    }catch(err){
-        console.log(err);
+    }catch(error){
+        console.log(error);
     }
 }
 fetchingN2E1();
