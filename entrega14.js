@@ -25,71 +25,63 @@ let salaries = [{
     id: 3,
     salary: 2000
 }];
+let id = 2;
+let employee = {id: 1, name: 'Linux Torvalds'};
 let getEmployee = (idEmpleado) => {
-    return new Promise (function(resolve, reject){
-        if (employees.findIndex(x => x.id === idEmpleado)!=-1){
-            resolve();
+    return new Promise ((resolve, reject) => {
+        if (employees.findIndex(x => x.id === idEmpleado)!=-1) {
+            let nombre = employees.find(data => data.id === idEmpleado);
+            let salario = salaries.find(data => data.id === idEmpleado);
+            let mensaje = "El salario de "+nombre.name+" es de "+salario.salary+" (N1E1)";
+            resolve(mensaje);
         }else{
-            reject();
+            reject("ID "+idEmpleado+" no encontrada (N1E1)");
         }
     })
-    .then(
-        function (value) {
-        let nombre = employees.find(data => data.id === idEmpleado);
-        console.log("La ID "+idEmpleado+" pertenece a "+nombre.name);
-        let salario = salaries.find(data => data.id === idEmpleado);
-        console.log("El salario de la ID "+idEmpleado+" es "+salario.salary);},
-        function(error) {console.log("ID no encontrada.");}  
-    );
 }
+getEmployee(id)
+    .then(value => console.log(value))
+    .catch(error => console.log(error));
 let getSalary = (employee) => {
-  return new Promise (function(resolve, reject){
-      if (employees.findIndex(x => x.id === employee.id)!=-1){
-          resolve();
-      }else{
-          reject();
-      }
-  })
-  .then(
-      function (value) {
-        let obj = salaries.find(data => data.id === employee.id);
-        console.log("El salario es de "+obj.salary);
-      },
-      function(error) {console.log("ID no encontrada.");}  
-  );
-} 
-let employee = employees[2];
-let id = 2;
-getSalary(employee);
-getEmployee(id);
+    return new Promise ((resolve, reject) => {
+        let salarioEmpleado = salaries.find(data => data.id === employee.id);
+        if (salarioEmpleado){
+            resolve(salarioEmpleado);
+        }else{
+            reject("ID no encontrada (N1E1)");
+        }
+    })
+}
+getSalary(employee)
+    .then(value => console.log("El salario es de "+value.salary+" (N1E1)"))
+    .catch(error => console.log(error));
 /* Nivell 1 - Exercici 2
 Crea una funció asíncrona que rebi un id d'empleat i imprimeixi
 per pantalla el nom de l'empleat i el seu salari, usant les 
 funcions que has definit a l'exercici anterior. */
-const datosEmpleado = async(id, employee) => {
+const datosEmpleado = async(id) => {
     try{
         const employee12 = await getEmployee(id);
-        const salary = await getSalary(employee);
+        console.log(employee12);
     }catch (error){
         throw error;
     }
 }
-let id = 2;
-let employee = employees[2];
-datosEmpleado(id, employee);
+datosEmpleado(1);
 /* Nivell 2 - Exercici 1
 Crea una nova funció asíncrona que cridi a una altra que retorni 
 una Promise que efectuï la seva funció resolve() després de 2 segons 
 de la seva invocació. */
 let funcionN2E1 = () => {
-    return new Promise (function(resolve, reject){
+    return new Promise ((resolve, reject) => {
         setTimeout(() => {resolve()}, 2000);})
 }
 async function fetchingN2E1 (){
     try{
         let n2e1 = funcionN2E1().then(
-        function(value) {console.log("Console.log del Nivel 2 Ejercicio 1")},
-    ); ;
+        value => {console.log("Console.log del Nivel 2 Ejercicio 1")},
+        error => console.log(error)
+    ); 
     }catch(err){
         console.log(err);
     }
