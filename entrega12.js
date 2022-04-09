@@ -22,8 +22,8 @@ let Fruta = function() {
       throw new Error("No se puede instanciar una clase abstracta.");
     }
 };
-
 Fruta.prototype.say = function() {
     throw new Error("Método abstracto.");
 }
 let pera = new Fruta();
+pera.say();
