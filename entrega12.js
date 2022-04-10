@@ -25,5 +25,5 @@ let Fruta = function() {
 Fruta.prototype.say = function() {
     throw new Error("Método abstracto.");
 }
+Fruta.prototype.tipo = "";
 let pera = new Fruta();
-pera.say();
