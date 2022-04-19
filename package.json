@@ -2,7 +2,7 @@
   "name": "Sprint1",
   "version": "1.0.0",
   "description": "Para el **Nivell 1** es necesaria la instalación del  [fs](https://www.npmjs.com/package/fs).",
-  "main": "entrega11.js",
+  "main": "entrega15.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

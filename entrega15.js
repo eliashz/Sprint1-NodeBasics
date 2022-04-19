@@ -44,7 +44,7 @@ function mostrarDirectorio(carpeta){
             console.log("Contenido del directorio: "+stdout);
         });
 }
-mostrarDirectorio('ls'); //cambiar para windows *** dir
+mostrarDirectorio('dir');
 /* Nivell 3 - Exercici 1
 Crea una funció que creï dos fitxers codificats en hexadecimal
 i en base64 respectivament, a partir del fitxer del nivell 1 */
