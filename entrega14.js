@@ -31,16 +31,14 @@ let getEmployee = (idEmpleado) => {
     return new Promise ((resolve, reject) => {
         if (employees.findIndex(x => x.id === idEmpleado)!=-1) {
             let nombre = employees.find(data => data.id === idEmpleado);
-            let salario = salaries.find(data => data.id === idEmpleado);
-            let mensaje = "El salario de "+nombre.name+" es de "+salario.salary+" (N1E1)";
-            resolve(mensaje);
+            resolve(nombre);
         }else{
             reject("ID "+idEmpleado+" no encontrada (N1E1)");
         }
     })
 }
 getEmployee(id)
-    .then(value => console.log(value))
+    .then(value => console.log("La ID "+value.id+" pertenece a "+value.name+" (N1E1)"))
     .catch(error => console.log(error));
 let getSalary = (employee) => {
     return new Promise ((resolve, reject) => {
@@ -62,7 +60,8 @@ funcions que has definit a l'exercici anterior. */
 const datosEmpleado = async(id) => {
     try{
         const employee12 = await getEmployee(id);
-        console.log(employee12);
+        const salario12 = await getSalary(employee12);
+        console.log("El salario es "+salario12.salary+" (N1E2)");
     }catch (error){
         throw error;
     }
@@ -78,7 +77,8 @@ let funcionN2E1 = () => {
 }
 async function fetchingN2E1 (){
     try{
-        funcionN2E1().then(value => console.log(value)); 
+        const resultado = await funcionN2E1(); 
+        console.log(resultado);
     }catch(error){
         console.log(error);
     }
