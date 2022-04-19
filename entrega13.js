@@ -62,16 +62,16 @@ let getEmployee = (idEmpleado) => {
     return new Promise ((resolve, reject) => {
         if (employees.findIndex(x => x.id === idEmpleado)!=-1) {
             let nombre = employees.find(data => data.id === idEmpleado);
-            let salario = salaries.find(data => data.id === idEmpleado);
-            let mensaje = "El salario de "+nombre.name+" es de "+salario.salary+" (N2E1)";
-            resolve(mensaje);
+            //let salario = salaries.find(data => data.id === idEmpleado);
+            //let mensaje = "El salario de "+nombre.name+" es de "+salario.salary+" (N2E1)";
+            resolve(nombre);
         }else{
             reject("ID "+idEmpleado+" no encontrada (N2E1)");
         }
     })
 }
 getEmployee(id)
-    .then(value => console.log(value))
+    .then(value => console.log("La ID "+value.id+" pertenece a "+value.name+" (N2E1)"))
     .catch(error => console.log(error));
 /* Nivell 2 - Exercici 2
 Crea una altra arrow function getSalary() similar a l'anterior que rebi
@@ -94,7 +94,7 @@ getSalary(employee)
 Invoca la primera funció getEmployee() i després getSalary() niant 
 l'execució de les dues promises. */
 getEmployee(id)
-    .then(value => getSalary(employees[1]))
+    .then(value => getSalary(value))
     .then(salario => console.log("El salario es de "+salario.salary+" (N2E3)"))
 /* Nivell 3 - Exercici 1
 Fixa un element catch a la invocació del nivell anterior que 
