@@ -3,9 +3,11 @@
 console.log((() => {
     return "Elías" + "Huerta"; 
   })());
+
 //Nivel 2 Exercici 1
 const segundoArrow = parametro => ({valor: parametro});
 console.log(segundoArrow(10));
+
 //Nivell 2 Exercici 2
 class Persona {
     constructor (nom){
@@ -16,6 +18,7 @@ class Persona {
     }
 }
 new Persona ("Maynard").dirNom();
+
 //Nivell 3 Exercici 1
 let Fruta = function() {
     if (this.constructor === Fruta) {
@@ -25,5 +28,17 @@ let Fruta = function() {
 Fruta.prototype.say = function() {
     throw new Error("Método abstracto.");
 }
-Fruta.prototype.tipo = "";
-let pera = new Fruta();
+
+let Pera = function() {
+    Fruta.apply(this, arguments);
+}
+
+Pera.prototype = Object.create(Fruta.prototype);
+Pera.prototype.constructor = Pera;
+
+Pera.prototype.say = function () {
+    console.log(`Soy una fruta`);
+}
+
+let pera = new Pera();
+pera.say();
