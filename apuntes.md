@@ -33,7 +33,7 @@ Si .gitignore no va:
 
 [Tokens](https://www.youtube.com/watch?v=IJf_Tryhzic)
 
-### Entrega 1.3
+## Entrega 1.3
 [Promesas](https://www.youtube.com/watch?v=Uxb_hhdy2KM)  
 [Más promesas](https://www.youtube.com/watch?v=9AbdrNR1vFU)
 
@@ -41,7 +41,7 @@ Si .gitignore no va:
 [Escribir archivo](https://www.youtube.com/watch?v=aA7h_M85rjA)  
 [Comprimir](https://www.youtube.com/watch?v=JxSsCqZ_xjw)
 
-### Entrega 1.6
+## Entrega 1.6
 ``npm init -y``  
 
 ``npm install --save-dev jest``
