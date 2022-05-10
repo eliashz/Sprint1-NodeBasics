@@ -9,6 +9,8 @@ node index.js
 
 [GITHUB](https://www.freecodecamp.org/espanol/news/como-hacer-tu-primer-pull-request-en-github/)
 
+Etiquetar commits:  
+
 ``git config --global user.name "Tu nombre"``  
 ``git config --global user.email "Tu correo"``
 
