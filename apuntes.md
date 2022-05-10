@@ -31,6 +31,8 @@ Etiquetar commits:
 Si .gitignore no va:  
 ``git rm -r --cached .``
 
+[Tokens](https://www.youtube.com/watch?v=IJf_Tryhzic)
+
 ### Entrega 1.3
 [Promesas](https://www.youtube.com/watch?v=Uxb_hhdy2KM)  
 [Más promesas](https://www.youtube.com/watch?v=9AbdrNR1vFU)
