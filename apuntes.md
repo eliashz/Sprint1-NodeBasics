@@ -3,7 +3,7 @@
 https://www.digitalocean.com/community/tutorials/how-to-install-node-js-and-create-a-local-development-environment-on-macos)  
 [3hr de Node](https://www.youtube.com/watch?v=RLtyhwFtXQA)  
 
-Para ver todos los archivos en Finder: ``Command, Shift y punto``. 
+Para ver todos los archivos en Finder: ``Command, Shift y punto``  
 node --version  
 code .  
 node index.js
